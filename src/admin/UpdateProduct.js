@@ -11,7 +11,6 @@ const UpdateProduct = ({ match }) => {
         price: '',
         categories: [],
         category: '',
-        shipping: '',
         quantity: '',
         photo: '',
         loading: false,
@@ -29,7 +28,6 @@ const UpdateProduct = ({ match }) => {
         price,
         // categories,
         category,
-        shipping,
         quantity,
         loading,
         error,
@@ -50,7 +48,6 @@ const UpdateProduct = ({ match }) => {
                     description: data.description,
                     price: data.price,
                     category: data.category._id,
-                    shipping: data.shipping,
                     quantity: data.quantity,
                     formData: new FormData()
                 });
@@ -139,15 +136,6 @@ const UpdateProduct = ({ match }) => {
                                 {c.name}
                             </option>
                         ))}
-                </select>
-            </div>
-
-            <div className="form-group">
-                <label className="text-muted">Shipping</label>
-                <select onChange={handleChange('shipping')} className="form-control">
-                    <option>Please select</option>
-                    <option value="0">No</option>
-                    <option value="1">Yes</option>
                 </select>
             </div>
 
